@@ -1,0 +1,11 @@
+{
+  "name": "kurpav-redux",
+  "version": "1.0.0",
+  "description": "Simple library to help to implement redux state managment",
+  "main": "store.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

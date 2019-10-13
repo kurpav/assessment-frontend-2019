@@ -1,17 +1,38 @@
-import React    from 'react'
-import { Link } from 'react-router-dom'
+import AppBar from '@material-ui/core/AppBar';
+import { Link } from 'react-router-dom';
+import React from 'react';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-export function Header () {
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'inherit',
+    margin: '0 5px'
+  },
+}));
+
+export function Header() {
+  const classes = useStyles();
   return (
-    <ul>
-      <li>
-        <Link to="/">
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link to='/create'>Create</Link>
-      </li>
-    </ul>
-  )
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">
+            <Link className={classes.link} to="/">Home</Link>
+          </Typography>
+          <Typography variant="h6">
+            <Link className={classes.link} to="/create">Create</Link>
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
